@@ -58,8 +58,8 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
         TextView temp = (TextView) convertView.findViewById(R.id.textView);
 
         for_desc.setText(String.valueOf(entry.getForecastDesc()));
-        Humidity_info.setText(String.valueOf(entry.getHumidity())+"%");
-        temp.setText(String.valueOf(entry.getTemp())+" °C");
+        Humidity_info.setText("Humidity: "+String.valueOf(entry.getHumidity())+"%");
+        temp.setText(Math.round(entry.getTemp())+" °C");
 
         new DownloadImageTask((ImageView) convertView.findViewById(R.id.imageView)).execute(entry.getImgReport());
 
